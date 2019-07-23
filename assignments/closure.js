@@ -1,13 +1,14 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const secretPassword = password => {
-  console.log('I shall never reveal this password!');
+const secretPassword = () => {
+  const password = '$uper$ecretP@$$w0rd'
+  console.log('I shall never reveal the secret password hidden in this function!');
   
-  const snitch = () => 'Psst... the password is ' + password;
+  const snitch = () => 'Psst... the password is: ' + password;
   return snitch;
 }
 
-const secret = secretPassword('abc123');
+const secret = secretPassword();
 
 console.log(secret());
 
