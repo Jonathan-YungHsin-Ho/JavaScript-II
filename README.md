@@ -11,8 +11,8 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [x] Add your project manager as collaborator on Github.
 * [x] Clone your OWN version of the repository (Not Lambda's by mistake!).
 * [x] Create a new branch: git checkout -b `<firstName-lastName>`.
-* [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-* [ ] Push commits: git push origin `<firstName-lastName>`.
+* [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+* [x] Push commits: git push origin `<firstName-lastName>`.
 
 **Follow these steps for completing your project.**
 
@@ -44,8 +44,8 @@ We have learned that closures allow us to access values in scope that have alrea
 
 **Hint: Utilize debugger statements in your code in combination with your developer tools to easily identify closure values.**
 
-* [ ] Review the contents of the [closure.js](assignments/closure.js) file.  
-* [ ] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
+* [x] Review the contents of the [closure.js](assignments/closure.js) file.  
+* [x] Complete the problems provided to you but skip over stretch problems until you are complete with every other JS file first.
 
 ## Stretch Goals
 
