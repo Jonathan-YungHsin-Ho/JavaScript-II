@@ -476,14 +476,14 @@ console.log(allCaps);
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 let largeShirts = [];
-largeShirts = runners.filter(element => element.shirt_size === 'L');
+largeShirts = runners.filter(element => element.shirt_size === "L");
 
 console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
-ticketPriceTotal = runners.reduce((acc, val) => acc += val.donation, 0);
+ticketPriceTotal = runners.reduce((acc, val) => (acc += val.donation), 0);
 
 console.log(ticketPriceTotal);
 
@@ -498,12 +498,16 @@ mailingList = runners.map(element => element.email);
 console.log(JSON.stringify(mailingList));
 
 // Problem 2
-// Determine how many shirts of each size to order.
-let tshirtOrder = [];
-runners.forEach((element) => {
-    return ({})
-});
+// Companies that donate over a certain amount get special acknowledgement. Return an array with companies that donated over a certain amount.
+const sponsor = (min = 0, max = 300) => runners.filter(element => element.donation > min && element.donation < max).map(element => `${element.company_name}: $${element.donation}`);
 
-console.log(tshirtOrder);
+console.log(sponsor(100, 200));
+console.log(sponsor(200));
 
 // Problem 3
+// Determine how many shirts of each size to order.
+const shirtSizes = runners.map(element => element.shirt_size);
+
+const uniqueShirtSizes = shirtSizes.filter((element, index) => shirtSizes.indexOf(element) === index);
+
+uniqueShirtSizes.forEach(size => console.log(`${size}: ${runners.filter(element => element.shirt_size === size).length}`));
