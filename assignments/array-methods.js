@@ -499,7 +499,7 @@ console.log(JSON.stringify(mailingList));
 
 // Problem 2
 // Companies that donate over a certain amount get special acknowledgement. Return an array with companies that donated over a certain amount.
-const sponsor = (min = 0, max = 300) => runners.filter(element => element.donation > min && element.donation < max).map(element => `${element.company_name}: $${element.donation}`);
+const sponsor = (min = 0, max = 300) => runners.filter(element => element.donation > min && element.donation < max).map(element => `${element.company_name}: $${element.donation}`).sort();
 
 console.log(sponsor(100, 200));
 console.log(sponsor(200));
@@ -512,10 +512,8 @@ const uniqueShirtSizes = shirtSizes.filter((element, index) => shirtSizes.indexO
 
 uniqueShirtSizes.forEach(size => console.log(`${size}: ${runners.filter(element => element.shirt_size === size).length}`));
 
-// const topDonation = runners.map(element => element.donation).reduce((acc, val) => (acc >= val) ? acc : val, 0);
+// Problem 4
+// Posed on the Slack #web22_help channel. Find the person that gave the highest donation.
+const topDonor = runners.reduce((acc, val) => (acc.donation > val.donation) ? acc : val);
 
-// const topDonor = runners.filter(element => element.donation === highestDonation);
-
-const topDonor = runners.filter(element => element.donation === (runners.map(element => element.donation).reduce((acc, val) => (acc >= val) ? acc : val, 0)));
-
-console.log(`The top donor is ${topDonor[0].first_name} ${topDonor[0].last_name} of ${topDonor[0].company_name} with a donation of $${topDonor[0].donation}!`);
+console.log(`The top donor is ${topDonor.first_name} ${topDonor.last_name} of ${topDonor.company_name} with a donation of $${topDonor.donation}!`);
