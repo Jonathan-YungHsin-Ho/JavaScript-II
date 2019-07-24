@@ -511,3 +511,11 @@ const shirtSizes = runners.map(element => element.shirt_size);
 const uniqueShirtSizes = shirtSizes.filter((element, index) => shirtSizes.indexOf(element) === index);
 
 uniqueShirtSizes.forEach(size => console.log(`${size}: ${runners.filter(element => element.shirt_size === size).length}`));
+
+// const topDonation = runners.map(element => element.donation).reduce((acc, val) => (acc >= val) ? acc : val, 0);
+
+// const topDonor = runners.filter(element => element.donation === highestDonation);
+
+const topDonor = runners.filter(element => element.donation === (runners.map(element => element.donation).reduce((acc, val) => (acc >= val) ? acc : val, 0)));
+
+console.log(`The top donor is ${topDonor[0].first_name} ${topDonor[0].last_name} of ${topDonor[0].company_name} with a donation of $${topDonor[0].donation}!`);
